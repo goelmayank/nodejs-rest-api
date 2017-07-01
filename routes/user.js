@@ -6,37 +6,6 @@ var jwt = require('jsonwebtoken');
 var User = require('../models/user');
 var controllers = require('../controllers');
 
-router.get('/:resource', function(req, res, next){
-    var resource = req.params.resource;
-    var controller = controllers[resource];
-    console.log(controller);
-
-    if(controller == undefined){
-        res.json({
-            conf: 'failed',
-            message: 'Invalid resource request: ' +resource
-        })
-        return;
-    }
-
-    controller.find(req.query, function(err, results){
-
-        if(err){
-            res.json({
-                conf:'failed',
-                message: err
-            })
-            return;
-        }
-
-        res.json({
-            conf: 'success',
-            results: results
-        })
-    })
-
-
-});
 
 router.post('/', function (req, res, next) {
     var user = new User({
