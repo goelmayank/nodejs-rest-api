@@ -31,6 +31,10 @@ var db = mongoose.connection;
 
 var appRoute  = require('./routes/app');
 // var api       = require('./routes/api');
+var userRoute = require('./routes/users');
+var sessionsRoute = require('./routes/sessions');
+// var definitionsRoute = require(require('./routes/definitions'));
+// var logsRoute = require('./routes/logs');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,10 +52,10 @@ app.use(require('./middleware/validate-session'));
 
 app.use('/', appRoute);
 // app.use('/api', api);
-app.use('/api/users', require('./routes/users'));
-app.use('/api/login', require('./routes/sessions'));
-app.use('/api/definitions', require('./routes/definitions'));
-app.use('/api/logs', require('./routes/logs'));
+app.use('/api/users', userRoute);
+app.use('/api/login',sessionsRoute);
+// app.use('/api/definitions', definitionsRoute);
+// app.use('/api/logs', logsRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
