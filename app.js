@@ -30,9 +30,7 @@ mongoose.connect(config.db, function(err, res){
 var db = mongoose.connection;
 
 var appRoute  = require('./routes/app');
-var api       = require('./routes/api');
-// var messageRoutes = require('./routes/messages');
-// var userRoutes = require('./routes/user');
+// var api       = require('./routes/api');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,11 +43,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('./middleware/headers'));
+app.use(require('./middleware/validate-session'));
 
 app.use('/', appRoute);
-app.use('/api', api);
-// app.use('/message', messageRoutes);
-// app.use('/user', userRoutes);
+// app.use('/api', api);
+app.use('/api/users', require('./routes/users'));
+app.use('/api/login', require('./routes/sessions'));
+app.use('/api/definitions', require('./routes/definitions'));
+app.use('/api/logs', require('./routes/logs'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
