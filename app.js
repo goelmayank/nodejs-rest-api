@@ -31,6 +31,8 @@ var db = mongoose.connection;
 
 var appRoute  = require('./routes/app');
 var api       = require('./routes/api');
+var messageRoutes = require('./routes/messages');
+var userRoutes = require('./routes/user');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +48,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', appRoute);
 app.use('/api', api);
+app.use('/message', messageRoutes);
+app.use('/user', userRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

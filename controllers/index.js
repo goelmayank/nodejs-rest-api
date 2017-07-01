@@ -1,11 +1,14 @@
-var UserController = require('./UserController');
+var UsersController = require('./UserController');
 var BookController = require('./BookController');
 var AutoController = require('./AutoController');
-
+var UserController = require('./UserController');
+var MessagesController = require('./MessagesController');
 
 
 module.exports = {
-	users: UserController,
+	users: UsersController,
 	book: BookController,
-	auto : AutoController
+	auto : AutoController,
+	user: UserController,
+	messages: MessagesController
 }
