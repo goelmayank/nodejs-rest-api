@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 
 var bookSchema = mongoose.Schema({
-	
+
 
 	timestamp: {
 		type: String,
@@ -11,6 +11,10 @@ var bookSchema = mongoose.Schema({
 	},
 	ip: {
 		type: String,
+		required: false
+	},
+	shareTrip: {
+		type: Boolean,
 		required: false
 	},
 	transactionType: {
@@ -56,7 +60,7 @@ var bookSchema = mongoose.Schema({
 			type: String,
 			required: false
 		}
-		
+
 	},
 	fare: {
 		type: Number,
@@ -65,18 +69,18 @@ var bookSchema = mongoose.Schema({
 	mac: {
 		type: String,
 		required: false
-	},	
+	},
 	agent: {
 		type: Object,
 		required: false
 	},
-	
+
 	status: {
 		stage: {
 			type: Number,
 			required: false
 		},
-		
+
 		reason: {
 			type: String,
 			required: false
@@ -85,7 +89,7 @@ var bookSchema = mongoose.Schema({
 	referral: {
 		type: String,
 		required: false
-	}		
+	}
 
 
 });
