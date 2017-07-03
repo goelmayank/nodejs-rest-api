@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 
 var userSchema = mongoose.Schema({
-	
+
 	name: {
 		first: {
 			type: String,
@@ -13,12 +13,12 @@ var userSchema = mongoose.Schema({
 			required: false
 		}
 	},
-	
+
 	picture: {
 		type: String,
 		required: false
 	},
-	
+
 	email: {
 		type: String,
 		required: false
@@ -40,8 +40,8 @@ var userSchema = mongoose.Schema({
 			type: String,
 			required: false
 		}
-	},	
-	
+	},
+
 	timestamp: {
 		type: String,
 		default: Date.now,
@@ -80,7 +80,7 @@ var userSchema = mongoose.Schema({
 		type: String,
 		required: false
 	},
-	
+
 	balanceFiat: {
 		type: Number,
 		default: 0,
@@ -115,7 +115,7 @@ var userSchema = mongoose.Schema({
 		type: Object,
 		required: false
 	},
-	
+
 	proLink: {
 		type: String,
 		required: false
@@ -179,7 +179,7 @@ var userSchema = mongoose.Schema({
 		},
 		countryUser: {
 			type: String,
-			default: "SRI LANKA",
+			default: "INDIA",
 			required: false
 		},
 		cityUser: {
@@ -188,7 +188,7 @@ var userSchema = mongoose.Schema({
 		},
 		currencyUser: {
 			type: String,
-			default: "LKR",
+			default: "INR",
 			required: false
 		}
 	},
@@ -211,4 +211,3 @@ var userSchema = mongoose.Schema({
 });
 
 var Users = module.exports = mongoose.model('Users',userSchema);
-
