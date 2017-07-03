@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var cors = require('cors');
-
+var morgan = require('morgan');
 
 
 var cookieSession = require('cookie-session');
@@ -49,7 +49,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./middleware/headers'));
 app.use(require('./middleware/validate-session'));
-
+app.use(morgan('dev'));
 app.use('/', appRoute);
 // app.use('/api', api);
 app.use('/api/users', userRoute);

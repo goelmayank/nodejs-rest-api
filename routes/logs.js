@@ -1,4 +1,4 @@
-var router = require('express').Router();
+    var router = require('express').Router();
 var Log = require('../models/log');
 
 router.get('/', (req,res) => {
