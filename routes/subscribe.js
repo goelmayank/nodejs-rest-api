@@ -1,14 +1,14 @@
 var router = require('express').Router();
-var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
-var constants = require('../config/constants');
+var SubscribeForm = require('../models/subscribeForm');
 
 router.post('/', (req, res) => {
   // user = { username: 'foo', email: 'blah@cheese.com', pwd: 'blah'}
-    var email = req.body.form.email;
-    user.save().then(
-      (newEmail) => {
-        var sessionToken = jwt.sign(newuser._id, constants.JWT_SECRET, { expiresIn: 60*60*24 });
+    var subscribeForm = new SubscribeForm({
+        email: req.body.form.email
+    });
+
+    subscribeForm.save().then(
+      (newSubscribeForm) => {
         res.json({
           message: 'success'       
         });

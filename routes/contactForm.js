@@ -1,8 +1,5 @@
 var router = require('express').Router();
-var bcrypt = require('bcryptjs');
 var ContactForm = require('../models/contactForm');
-var jwt = require('jsonwebtoken');
-var constants = require('../config/constants');
 
 router.post('/', (req, res) => {
   // user = { username: 'foo', email: 'blah@cheese.com', pwd: 'blah'}
