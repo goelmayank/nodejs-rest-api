@@ -33,6 +33,8 @@ var appRoute  = require('./routes/app');
 // var api       = require('./routes/api');
 var userRoute = require('./routes/users');
 var sessionsRoute = require('./routes/sessions');
+var contactFormRoute = require('./routes/contactForm');
+var subscribeRoute = require('./routes/subscribe');
 // var definitionsRoute = require(require('./routes/definitions'));
 // var logsRoute = require('./routes/logs');
 
@@ -54,6 +56,8 @@ app.use('/', appRoute);
 // app.use('/api', api);
 app.use('/api/users', userRoute);
 app.use('/api/login',sessionsRoute);
+app.use('/api/contactForm', contactFormRoute);
+app.use('/api/subscribe',subscribeRoute);
 // app.use('/api/definitions', definitionsRoute);
 // app.use('/api/logs', logsRoute);
 
