@@ -1,5 +1,5 @@
 {
-	"db":"mongodb://mayank:mayank123@ds133192.mlab.com:33192/tap-route",
+	"db":"mongodb://mayank:mayank123@ds145292.mlab.com:45292/nodejs-rest-api",
 	"protocol": "http"
 
 } 
